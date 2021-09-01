@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Melquiades Hdez Reyes">
     <title>Web Freelancer</title>
+
+    <link rel="stylesheet" href="css/style.css" as="style"> <!-- Load stylesheet faster -->
+    <link rel="stylesheet" href="/css/normalize.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="preload" href="css/style.css" as="style"> <!-- Load stylesheet faster -->
+    <link rel="stylesheet" href="css/style.css"> <!-- My stylesheet -->
+    
 </head>
 <body>
     <header>
-        <h1>Melquiades - Web Freelancer</h1>
+        <h1 class="title-header">Melquiades - Web Freelancer</h1>
     </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About me</a>
-        <a href="#">Customers</a>
-        <a href="#">Contact</a>
-    </nav>
-    
+    <div class="contain-main-menu-bar">
+        <nav class="main-menu-bar">
+            <a href="#">Home</a>
+            <a href="#">About me</a>
+            <a href="#">Customers</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+
     <section>
         <h2>Freelancer web design and development</h2>
         <p>Canary Island, Spain</p>
