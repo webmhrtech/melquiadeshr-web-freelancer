@@ -2,7 +2,7 @@
 
     /* Colors */
     --primary_color: #55f;
-    --second_color: #5f5;
+    --second_color: #fa0;
 
     /* Fonts */
 
@@ -19,30 +19,63 @@ body {
 
 .title-header {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3.8rem;
     color: var(--primary_color);
     font-weight: bold;
 }
 
-.contain-main-menu-bar {
+.container-main-menu-bar {
     background: var(--second_color);
+}
+
+.container {
+    min-width: 120rem; /* minimum container size will be 1200px = 120rem */
+    margin: 0 auto;
 }
 
 .main-menu-bar {
     padding: 0 25rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-.main-menu-bar a {
+.main-menu-bar a {    
     color: #fff;
-    font-size: 1.6rem;
+    font-size: 2rem;
+    font-weight: 700;
     text-decoration: none;
-    padding: 2rem;
+    padding: 1rem 2rem;
 }
 
 .main-menu-bar a:hover {
-    background: #ff1;
-    color: #000;
+    background: black;
+    color: yellow;
 }
 
+/***** Media Queries - Resolutions per screen *****/
+
+
+/* Mobile Phones */
+@media (min-width: 400px) {
+    body {
+        /* background: chocolate; */
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+
+    body {
+        /* background: violet; */
+    }
+
+}
+
+/* Laptop and PC */
+@media (min-width: 1140px) {
+
+    body {
+        /* background: gray; */
+    }
+}
