@@ -29,28 +29,35 @@ body {
 }
 
 .container {
-    min-width: 120rem; /* minimum container size will be 1200px = 120rem */
+    max-width: 120rem; /* the max size of the container will be 1200px = 120rem */
     margin: 0 auto;
 }
 
 .main-menu-bar {
-    padding: 0 25rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    /* align-items: center; /* centers only the content of the flex */
 }
 
-.main-menu-bar a {    
+.main-menu-bar a {  
+    display: block;
+    text-align: center; /* centers the whole block */
     color: #fff;
     font-size: 2rem;
     font-weight: 700;
     text-decoration: none;
-    padding: 1rem 2rem;
+    padding: 1rem;
 }
 
 .main-menu-bar a:hover {
     background: black;
     color: yellow;
+}
+
+.container-image {
+    background-image: url(../images/ada.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /***** Media Queries - Resolutions per screen *****/
@@ -61,6 +68,11 @@ body {
     body {
         /* background: chocolate; */
     }
+
+    .main-menu-bar {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* Tablet */
@@ -70,6 +82,11 @@ body {
         /* background: violet; */
     }
 
+    .main-menu-bar {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
 }
 
 /* Laptop and PC */
@@ -77,5 +94,15 @@ body {
 
     body {
         /* background: gray; */
+    }
+
+    .container {
+        max-width: 100%; /* the max size 100% */
+        margin: 0 auto;
+    }
+
+    .main-menu-bar {
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 }
