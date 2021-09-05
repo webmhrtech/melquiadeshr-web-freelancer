@@ -21,6 +21,7 @@ html {
 body {
     font-size: 16px; /* e.g. 16px = 1rem  e.g.*/
     font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(to bottom grey 0%, to top white 100%); /* Colorful gradient for wallpaper */
 }
 
 h1 {
@@ -67,8 +68,8 @@ h1, h2, h3 {
 }
 
 .main-menu-bar a:hover {
-    background: black;
-    color: yellow;
+    background: #333;
+    color: #fff;
 }
 
 .container-image {
@@ -104,7 +105,45 @@ h1, h2, h3 {
     padding: 1.5rem;
     text-decoration: none;
     color: #fff;
+    font-weight: bold;
     border-radius: .5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 3rem;
+}  
+
+.my-services{
+    background: #6495ed;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+}
+
+.fill-circle{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: var(--second_color);
+    margin: 0 auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-services section, h3, svg, p {
+    text-align: center;
+}
+
+footer {
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -116,7 +155,7 @@ h1, h2, h3 {
 
     .botton-contact {
         width: 90%;
-    }
+    } 
 }    
 
 @media (min-width: 400px) {
