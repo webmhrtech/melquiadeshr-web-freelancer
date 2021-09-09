@@ -1,209 +1,327 @@
 :root {
 
     /* Colors */
-    --primary_color: #55f;
-    --second_color: #fa0;
-
-    /* Fonts */
-
+    --primary_color: #fa0;
+    --second_color: #55f;
+    --white_color: #fff;
+    --black_color: #111;
+    --grey_color: #555;
+    --light-blue_color: #ddf;
+    --light-yellow_color: #fa4;
 }
 
 html {
     font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
-    box-sizing: border-box;
     min-width: 400px; /* The screen will have a minimum */
 }
-
-*, *:before, *:after {
-    box-sizing: inherit;
-  }
 
 body {
     font-size: 16px; /* e.g. 16px = 1rem  e.g.*/
     font-family: 'Montserrat', sans-serif;
-    background-image: linear-gradient(to bottom grey 0%, to top white 100%); /* Colorful gradient for wallpaper */
-}
+    background-image: linear-gradient(to top, var(--light-blue_color) 0%, var(--white_color) 100%); /* Colorful gradient for wallpaper */
+    /* background-image: linear-gradient(to top var(--light-blue_color) 0%, to bottom var(--white_color) 100%);  */
+}   
+
+/* APPLICATION FOR HEADER TAGS IN GENERAL h1, h2, h3, ...*/
 
 h1 {
-    font-size: 3.8rem;
-    color: #000;
-    font-weight: bold;
+    font-size: 3.8rem;  
 }
 
 h2 {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
 }
 
 h3 {
-    font-size: 3.2rem;
+    font-size: 1.8rem;
 }
 
 h1, h2, h3 {
     text-align: center;
 }
 
-.container-main-menu-bar {
-    background: var(--second_color);
-}
+/********************************************************************** 
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    ENGLISH: apply a natural box layout model to all elements, but 
+    allowing components to change 
+
+    SPANISH: aplicar un modelo de diseño de caja natural a todos los 
+    elementos, pero permitiendo que los componentes cambien 
+    
+***********************************************************************/
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
 
 .container {
     max-width: 120rem; /* the max size of the container will be 1200px = 120rem */
     margin: 0 auto;
 }
 
-.main-menu-bar {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; /* centers only the content of the flex */
+/* Another way to give more reusable styles to the button */
+.botton-contact {
+    background: var(--second_color);
+    color: var(--white_color);
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: .5rem;
+    text-transform: uppercase;
+    margin: 1rem;
+    padding: 1rem;
+    width: 90%;
 }
 
-.main-menu-bar a {  
+@media (min-width: 480px){
+    .botton-contact {
+        width: auto; /* auto: Returns to its original size */
+    }
+}
+
+.nav-bg { /* Note: inside the div, the color takes the whole line */
+    background: var(--second_color);
+}
+
+/* Starting from a mobile to higher resolutions */
+.container-main-menu-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px){
+    .container-main-menu-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10rem;
+    }
+}
+
+.container-main-menu-bar a {
     display: block;
-    text-align: center; /* centers the whole block */
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 700;
+    text-align: center;
+    color: var(--white_color);
     text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
     padding: 1rem;
 }
 
-.main-menu-bar a:hover {
-    background: #333;
-    color: #fff;
+.container-main-menu-bar a:hover { /* Hovering over the <a> element / Pasar el ratón por encima del elemento <a> */
+    background-color: var(--primary_color);
+    color: var(--black_color);
 }
 
-.container-image {
-    position: relative; /* Space is conserved in the box */
-    background-image: url(../images/ada.jpg);
+/* Image container. e.g. The ada.jpg image goes inside this <div> container */
+.contain-img-ada { 
+    background-image: url(../img/ada.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 350px;
+    height: 300px;
+    position: relative; /* Space is conserved in the box */
 }
 
-.imagen-ada {
+/* Image content. example: What does the ada.jpg image contain? */
+.container-img-ada { 
     position: absolute; /* Space is not conserved in the box */
-    background: #000B; /* B: transparency in hex - HEX: 0-9 and A - F */
+    background: #0007; /* 7: transparency in hex - HEX: 0-9 and A - F */
     width: 100%;
     height: 100%;
 
+    /* TO ALIGN VERTICALLY AND HORIZONTALLY - CAN BE APPLIED IN ALL PROJECTS */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.imagen-ada h2, .imagen-ada p { color: #fff;}
+.container-img-ada h2,
+.container-img-ada p {
+    color: var(--white_color);
+}
 
 .my-location {
     display: flex;
     align-items: flex-end;
 }
 
-.botton-contact {
-    background: darkblue;
-    margin: 3rem 0;
-    padding: 1.5rem;
+/* One way to style the button would be this */
+/*
+.container-img-ada  a{
+    background: var(--second_color);
+    color: var(--white_color);
+    text-align: center;
     text-decoration: none;
-    color: #fff;
     font-weight: bold;
     border-radius: .5rem;
-    text-align: center;
     text-transform: uppercase;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+*/
+
+/*** SERVICES ***/
+
+.services {
+    display: grid;
+    grid-gap: 1rem;
 }
 
-main{
+@media (min-width:760px){
+    .services {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
+    }
+}
+
+.service {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem 3rem;
-}  
-
-.my-services{
-    background: #6495ed;
-    border-radius: 1rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 2rem;
 }
 
-.fill-circle{
+.service p {
+    text-align: center;
+    line-height: 2.2rem;
+}
+
+.icons {
     width: 10rem;
     height: 10rem;
+    background: var(--primary_color);
     border-radius: 50%;
-    background: var(--second_color);
-    margin: 0 auto;
-    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.my-services section, h3, svg, p {
+.form-contact {
+    background: var(--grey_color);
+    width: min(60rem, 100%); /* Choose the min value that is 60rem and if not 100% of the container */
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+
+.form-contact fieldset {
+    border: none; /* Remove the edges to the fildset */
+    margin-right: 1rem;
+}
+
+.form-contact fieldset legend {
     text-align: center;
+    color: var(--primary_color);
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-top: 2rem;
+}
+
+.container-fields {
+    padding-right: 0rem;
+}
+
+.field-contact {
+    margin-bottom: 1rem ;
+}
+
+.field-contact label {
+    color: var(--white_color);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+/* IT IS APPLIED TO ALL THE ATTRIBUTES OF THE INPUT AND THE TEXTAREA */
+.field-contact input[type="text"], 
+.field-contact input[type="tel"],
+.field-contact input[type="email"],
+.field-contact textarea {
+    border: none;
+    width: 100%;
+    background: var(--light-blue_color);
+    border-radius: .5rem;
+    padding: 1rem 0 1rem 1rem;
+}
+
+
+/* WHEN WE CLICK INSIDE THE INPUT OR THE TEXTAREA */
+.field-contact input[type="text"]:focus, 
+.field-contact input[type="tel"]:focus,
+.field-contact input[type="email"]:focus,
+.field-contact textarea:focus {
+    outline: none;
+    background: var(--white_color);    
+}
+
+textarea {
+    height: 10rem;
+    resize: none; /* Unable to expand textarea */
+}
+
+.botton-form {
+    text-align: center;
+}
+
+/***** BOTTON *****/
+
+.botton-form input[type="submit"]{
+    width: 100%;
+    border-radius: .5rem;
+    border: none;
+    padding: .5rem;
+    background-color: var(--light-yellow_color);
+    color: var(--white_color);  
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.botton-form input[type="submit"]:focus {
+    background: var(--primary_color);  
+}
+
+@media (min-width:768px){
+    .botton-form input[type="submit"] {
+        width: auto;
+        padding: .5rem 2rem;
+    }
+}
+
+/***** SHADOW CONNTAINER MAIN *****/
+
+.shadow-container-main {
+    box-shadow: 10px 10px 3px -3px rgba(204,198,198,0.75);
+    -webkit-box-shadow: 10px 10px 3px -3px rgba(204,198,198,0.75);
+    -moz-box-shadow: 10px 10px 3px -3px rgba(204,198,198,0.75);
+    background: var(--white_color);
+    padding: 2rem;
+    border-radius: 2rem;
+    margin: 2rem 4rem;
 }
 
 footer {
-    margin: 0 auto;
     text-align: center;
+    font-size: 1.2rem;
 }
 
-/***** Media Queries - Resolutions per screen *****/
+@media (min-width:768px){
+    footer {
+        font-size: 1.5rem;
+    }
+}
+
+/***** MEDIA QUERY | THE MOST USED RESOLUTIONS *****/
 
 
 /* Mobile Phones */
-@media (max-width: 400px) {
-
-    .botton-contact {
-        width: 90%;
-    } 
-}    
-
-@media (min-width: 400px) {
-    body {
-        /* background: chocolate; */
-    }
-
-    .main-menu-bar {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .botton-contact {
-        width: 90%;
-    }
-}
+@media (min-width: 400px) {}
 
 /* Tablet */
-@media (min-width: 768px) {
-
-    body {
-        /* background: violet; */
-    }
-
-    .main-menu-bar {
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .botton-contact {
-        width: auto;
-    }
-}
+@media (min-width: 768px) {}
 
 /* Laptop and PC */
-@media (min-width: 1140px) {
+@media (min-width: 1140px) {}
 
-    body {
-        /* background: gray; */
-    }
-
-    .container {
-        max-width: 100%; /* the max size 100% */
-        margin: 0 auto;
-    }
-
-    .main-menu-bar {
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-}
+@media (min-width: 1400px) {}
